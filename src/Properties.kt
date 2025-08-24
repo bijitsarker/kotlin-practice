@@ -76,31 +76,58 @@
 //    println("Student FullName: ${s1.fullName}")
 //}
 //--------------
-class Person{
-    var email:String = ""
-        get() = field.uppercase()
-        set(value){
-            field = value.trim()
-        }
-    var password:Int = 0
-        get() = field
-        set(value){
-            if(value>8) field = value
-            else println("To short password")
-        }
-    var age: Int = 0
-        get () = field
-        set(value){
-            if(value>18) field = value
-            else println("You are child")
-        }
-}
+//class Person{
+//    var email:String = ""
+//        get() = field.uppercase()
+//        set(value){
+//            field = value.trim()
+//        }
+//    var password:Int = 0
+//        get() = field
+//        set(value){
+//            if(value>8) field = value
+//            else println("To short password")
+//        }
+//    var age: Int = 0
+//        get () = field
+//        set(value){
+//            if(value>18) field = value
+//            else println("You are child")
+//        }
+//}
+//fun main(){
+//    val p1 = Person()
+//    p1.email = "alex@gmail.com"
+//    p1.password = 15379
+//    p1.age = 15
+//    println("User Email: ${p1.email}")
+//    println("User Password: ${p1.password}")
+//    println("User Age: ${p1.age}")
+//}
+//----------------
+import kotlin .properties.ReadWriteProperty
+import kotlin.reflect.kProperty
 fun main(){
-    val p1 = Person()
-    p1.email = "alex@gmail.com"
-    p1.password = 15379
-    p1.age = 15
-    println("User Email: ${p1.email}")
-    println("User Password: ${p1.password}")
-    println("User Age: ${p1.age}")
+    val user = User()
+
+
+}
+class User{
+    var firstName by FormatDelagate()
+    var lasttName by FormatDelagate()
+}
+class Formate: ReadWriteProperty<Any?, String>{
+    private var formatedString: String
+    override fun getvalue(
+        thisRef:Any?
+        property = kProperty<*>):String{
+        return formatedString
+    }
+    override fun setvalue(
+        thisRef:Any?
+        property = kProperty<*>
+        value:String
+    ){
+        formatedString = value.lowercase()
+    }
 }

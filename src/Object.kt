@@ -23,7 +23,6 @@
 //        fun getCount(num:Int, num2:Double, num3:Int):Int{
 //            return  (num * num2.toInt() * num3)/2
 //        }
-//
 //    }
 //}
 //fun main(){
