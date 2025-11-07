@@ -53,6 +53,37 @@
 //    println(sum(1,3,4,5,6,7,8,4))
 //}
 //------------
+
+//fun main(){
+//    print("Enter a Number: ")
+//    val num = readln().toIntOrNull()
+////    print("Enter a Number 2: ")
+////    val num2 = readln().toDouble()
+//
+//    println("Your Number is $num")
+//}
+
+//fun main(){
+//    print("Enter Number: ")
+//    val num = readln()
+//    val num2= num.toIntOrNull()?.inc()
+//    println("The Number is $num2")
+//}
+
+//fun main(){
+//    print("Enter a Number: ")
+//    val number = readln().toIntOrNull()
+//    if(number != null){
+//       val num = if(number % 2 == 0) "The Number is even!"
+//        else null
+//        println(num)
+//
+//    }
+//    else "Enter a valid number"
+//
+//    }
+
+
 fun main(args: Array<String>){
     println(sumValue(1,2,3,4,5,6,7,8,9,10,12,23))
 }

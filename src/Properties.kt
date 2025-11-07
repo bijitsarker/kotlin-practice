@@ -105,29 +105,29 @@
 //    println("User Age: ${p1.age}")
 //}
 //----------------
-import kotlin .properties.ReadWriteProperty
-import kotlin.reflect.kProperty
-fun main(){
-    val user = User()
-
-
-}
-class User{
-    var firstName by FormatDelagate()
-    var lasttName by FormatDelagate()
-}
-class Formate: ReadWriteProperty<Any?, String>{
-    private var formatedString: String
-    override fun getvalue(
-        thisRef:Any?
-        property = kProperty<*>):String{
-        return formatedString
-    }
-    override fun setvalue(
-        thisRef:Any?
-        property = kProperty<*>
-        value:String
-    ){
-        formatedString = value.lowercase()
-    }
-}
+//import kotlin .properties.ReadWriteProperty
+//import kotlin.reflect.kProperty
+//fun main(){
+//    val user = User()
+//
+//
+//}
+//class User{
+//    var firstName by FormatDelegate()
+//    var lastName by FormatDelegate()
+//}
+//class Formate: ReadWriteProperty<Any?, String>{
+//    private var formatedString: String
+//    override fun getValue(
+//        thisRef:Any?
+//        property = kProperty<*>):String{
+//        return formatedString
+//    }
+//    override fun setValue(
+//        thisRef:Any?
+//        property = kProperty<*>
+//        value:String
+//    ){
+//        formatedString = value.lowercase()
+//    }
+//}

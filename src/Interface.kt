@@ -136,3 +136,30 @@
 //    app.a1()
 //    app2.a2()
 //}
+
+
+interface Animal1{
+    fun tiger(count: Int,count2: Int): String
+}
+
+interface Animal2{
+    fun dear(num: Int)
+}
+
+class Forest(val name: String,):Animal1,Animal2{
+    override fun tiger(count: Int, count2:Int):String {
+        return "The Animal in forest ${count + count2}"
+    }
+
+    override fun dear(num: Int) {
+        println("The dear : $num")
+        println("The animal name: $name")
+    }
+
+}
+
+fun main(){
+    val animal = Forest("LIon")
+    println(animal.tiger(20,30))
+   println( animal.dear(40))
+}

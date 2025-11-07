@@ -1,67 +1,65 @@
-//sealed class Result(val massage:String){
-//    class Success(massage: String): Result(massage)
-//    class Error(massage: String): Result(massage)
-//    fun showMassage(){
-//        println("Result: $massage")
-//    }
-//}
-//fun getData(result:Result){
-//    when(result){
-//        is Result.Error -> println(result.showMassage())
-//        is Result.Success -> println(result.massage)
-//    }
-//}
-//fun main(){
-//    val success = Result.Success("success")
-//    val error = Result.Error("failed")
-//    println(getData(success))
-//
-//}
-//--------
+import Person
 
-//sealed class Shape{
-//    class Circle(val radius:Double):Shape(){
-//        fun square(power:Int){
-//            println("The Power of: ${power * radius}")
-//        }
-//    }
-//    class Rectangle(val length:Double, val wight: Double):Shape()
-//    object NoShape: Shape()
-//}
-//fun area(shape:Shape): String {
-//    when (shape) {
-//        is Shape.Circle -> return "The Circle value: "+Math.PI * shape.radius + shape.radius
-//        is Shape.Rectangle -> return "The Rectangle value: "+Math.PI * shape.length + shape.wight
-//        is Shape.NoShape -> return "The NoShape value: "+100.0 * Math.PI
+//sealed class Fruits
+//    class Apple(): Fruits()
+//    class Mango(): Fruits()
+//    class Banana(): Fruits()
+//
+//fun describe(fruits: Fruits){
+//    when(fruits){
+//        is Apple -> println("The fruit is apple.")
+//        is Mango -> println("The fruit is mango")
+//        is Banana -> println("The fruit is banana")
 //    }
 //}
+//
 //fun main(){
-//    val value = Shape.Circle(12.25)
-//    val value2= Shape.Rectangle(5.0, 10.0)
-//    val value3 = Shape.NoShape
-//
-//    println(area(value))
-//    value.square(12)
-//    println(area(value2))
-//    println(area(value3))
-//
+//    println(describe(Apple()))
+//    println(describe(Mango()))
+//    println(describe(Banana()))
 //}
-//-----------
-sealed class Demo{
-    class B {
-        fun odd() {
-            println("The function is odd")
+
+
+//sealed class Fiend {
+//    class Error(val error: String) : Fiend()
+//    class Successes(val data: String) : Fiend()
+//    object Message : Fiend()
+//}
+//
+//fun result(fiend: Fiend): String {
+//    return when (fiend) {
+//        is Fiend.Error -> "Error: ${fiend.error}"
+//        is Fiend.Successes -> "Data: ${fiend.data}"
+//        is Fiend.Message -> "Loading...."
+//    }
+//}
+//
+//fun main() {
+//    println(result(Fiend.Error("Network failed")))
+//    println(result(Fiend.Successes("User data loaded")))
+//    println(result(Fiend.Message))
+//}
+
+
+sealed class Men{
+   open class Person(val name1:String, val age: Int){
+       var salary = 0
+
+        fun person(){
+            println("Person Name: $name1 \n Person Age: $age \n Person Salary: $salary")
         }
     }
-        class A{
-            fun even(){
-                println("The function is even")
-            }
+
+    class Child(val name:String, name1: String, age: Int):Person(name1, age){
+        fun child(age: Int, salary: Int){
+            person()
+            println("Child Name: $name \n Child Age: $age \n Child Salary: $salary")
         }
+    }
 }
+
 fun main(){
-    val obj = Demo.B()
-    obj.odd()
-    val obj2 = Demo.A()
-    obj2.even()
+    val per = Men.Child("Alex","Sami",20)
+    println(per.child(20,200000))
+
 }

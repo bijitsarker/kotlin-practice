@@ -148,3 +148,44 @@
 //    }
 //    println("Total ood  number is found: $count")
 //}
+
+//fun main(){
+//    print("Enter your number: ")
+//    val num = readln().toInt()
+//
+//    var sum = 0
+//    var i = 0
+//
+//    while (i<num){
+//    val count = readln().toInt()
+//        sum += count
+//        i++
+//    }
+//    println("The total sum is: $sum")
+//}
+
+
+//fun main(){
+//    println("Enter a string: ")
+//    val input = readln()
+//    for(i in input){
+//        println(i)
+//    }
+//
+//}
+
+
+//fun main(){
+//    print("Enter a string: ")
+//    val input = readln()
+//    for(i in input.lastIndex downTo 0 ){
+//        println(input[i])
+//    }
+//}
+
+
+//fun main(){
+//    print("Enter string: ")
+//    val string = readln()
+//    println(string.reversed())
+//}
